@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Modal from "react-responsive-modal";
 
-interface ITedTalkPopup {
+interface IEditTedTalk {
     onCloseModal: any;
     open: any;
   }
 
-export class AddTedTalkPopup extends React.Component<ITedTalkPopup>{
+export class EditTedTalkPopup extends React.Component<IEditTedTalk>{
 public render(){
     return(
     <Modal open={this.props.open} onClose={this.props.onCloseModal}>
@@ -107,6 +107,4 @@ private addVideoToList() {
 }
 /////////////
 }
-
-
 
