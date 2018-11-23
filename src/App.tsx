@@ -1,6 +1,6 @@
 import MediaStreamRecorder from "msr";
 import * as React from "react";
-import TTVlogo from "./TTVlogo.gif";
+import msaPhase2Logo from "./msaPhase2Logo.PNG";
 
 const apiUrl = "https://tedtalkapi.azurewebsites.net/api";
 
@@ -58,7 +58,7 @@ class App extends React.Component<{}, IState> {
       <div>
         <div className="header-wrapper">
           <div className="container header">
-            <img className = "logo" src={TTVlogo} height="80px" />
+            <img className = "logo" src={msaPhase2Logo} height="80px" />
           </div>
           <div className="header">View your favourite Ted Talks here!</div>
         </div>
