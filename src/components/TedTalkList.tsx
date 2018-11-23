@@ -1,6 +1,7 @@
+import * as React from 'react';
 import deleteIcon from "./deleteIcon.png";
 import editIcon from "./editIcon.png";
-import * as React from 'react';
+
 
 interface ITedTalkListProps {
     tedTalks: any;
