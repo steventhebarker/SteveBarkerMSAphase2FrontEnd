@@ -12,7 +12,7 @@ interface ITedTalkListProps {
 export class TedTalkList extends React.Component<ITedTalkListProps> {
     public render() {
         const tedTalks = this.props.tedTalks;
-        return <table className="table table-striped maintable">
+        return <table className="table table-striped maintable tablecolours">
         <tbody>
           <tr>
             <th className="titlewidth">Title</th>

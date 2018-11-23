@@ -1,23 +1,31 @@
 body{
+  background-image: radial-gradient(circle, white, white, #fa8e8e);
   background-color:#ffe3e3;
   font-family: Helvetica;
 }
 
 /* Header */
 .header-wrapper {
-  background-color: #ffb2b2;
-  border-bottom: 3px solid #f00202;
+    background-image: radial-gradient(circle, white, white, #fa8e8e);
+  border-bottom: 3px solid #ac0000;
   width: 100%;
-  height: 140px;
+  height: 170px;
+}
+.whitebackground{
+  background-color: white;
 }
 .toptable{
   margin: auto;
   width: 15%;
 }
+.tablecolours{
+  background-color: rgb(255, 203, 203);
+}
+
 .searchbutton{
   margin: auto;
   width: 15%;
-  border-bottom: 50px solid #ffe3e3;
+  border-bottom: 50px solid #ffffff;
 }
 
 .logo{
