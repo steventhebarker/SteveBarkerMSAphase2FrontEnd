@@ -1,6 +1,6 @@
 import MediaStreamRecorder from "msr";
 import * as React from "react";
-import msaPhase2Logo from "./tedtalkViewerLogo.png";
+import msaPhase2Logo from "./tedtalkViewerLogo.jpg";
 
 const apiUrl = "https://tedtalkapi.azurewebsites.net/api";
 
