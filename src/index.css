@@ -10,8 +10,63 @@ body{
   width: 100%;
   height: 140px;
 }
+.toptable{
+  margin: auto;
+  width: 15%;
+}
+.searchbutton{
+  margin: auto;
+  width: 15%;
+  border-bottom: 50px solid #ffe3e3;
+}
 
+.logo{
+  width: 80%;
+  max-width: 400px;
+}
+
+.midd{
+  margin: auto;
+}
+
+.titlewidth{
+  max-width: 50px;
+}
+.speakerwidth{
+  max-width: 50px;
+}
+.topicwidth{
+  max-width: 50px;
+}
+.iconwidth{
+  width: 5px;
+}
+
+.maintable{
+  width: 100%;
+}
+
+.tablecolumn{
+  width: 100%;
+  max-width: 200px;
+}
+
+.search-bar{
+  margin: left;
+  max-width: 100%
+}
+.search-box{
+  margin: left;
+  width: 100%;
+}
+
+.video-layout{
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+}
 .header {
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,14 +2,29 @@ import * as React from 'react';
 import Modal from "react-responsive-modal";
 
 interface IEditTedTalk {
-    onCloseModal: any;
-    open: any;
+  tedTalks: any;
+    selectedID: any;
+    onEditCloseModal: any;
+    editOpen: any;
   }
 
 export class EditTedTalkPopup extends React.Component<IEditTedTalk>{
+  constructor(props: any) {
+    super(props);
+    this.state = {
+    editOpen: "",
+    onEditCloseModal: "",
+    selectedID: "",
+    tedTalks: ""
+    };
+    this.editVideoFromList = this.editVideoFromList.bind(this);
+  }
 public render(){
+  const item1 = this.props.tedTalks.find((obj:any) => obj.id === this.props.selectedID) || {url: ''};
+    console.log(this.props.selectedID);
+    console.log(item1);
     return(
-    <Modal open={this.props.open} onClose={this.props.onCloseModal}>
+    <Modal open={this.props.editOpen} onClose={this.props.onEditCloseModal}>
     <form>
   <div className="form-group">
     <label>Title:</label>
@@ -18,6 +33,7 @@ public render(){
       className="form-control"
       id="ted-title-input"
       placeholder="Enter Title"
+      // value= {item1.title}
     />
   </div>
   <div className="form-group">
@@ -27,6 +43,7 @@ public render(){
       className="form-control"
       id="ted-url-input"
       placeholder="Enter URL"
+      value = {item1.url}
     />
     <small className="form-text text-muted">
       This is the YouTube link to the video
@@ -57,8 +74,8 @@ public render(){
     </small>
   </div>
 
-  <button type="button" className="btn" onClick={this.addVideoToList}>
-    Add Video
+  <button type="button" className="btn" onClick={this.editVideoFromList}>
+    Edit Video
   </button>
 </form>
 </Modal>
@@ -66,7 +83,7 @@ public render(){
   }
     //////////////
   // POST meme
-private addVideoToList() {
+private editVideoFromList() {
   const titleInput = document.getElementById("ted-title-input") as HTMLInputElement
   const videoUrlInput = document.getElementById("ted-url-input") as HTMLInputElement
   const topicInput = document.getElementById("ted-topic-input") as HTMLInputElement
@@ -75,14 +92,15 @@ private addVideoToList() {
   if (titleInput === null || videoUrlInput === null) {
     return;
   }
-
+  const id = this.props.selectedID
   const title = titleInput.value
   const videoUrl = videoUrlInput.value
   const topic = topicInput.value
   const speaker = speakerInput.value
-  const url = "https://tedtalkapi.azurewebsites.net/api/ted"
+  const url = "https://tedtalkapi.azurewebsites.net/api/ted/"+this.props.selectedID
 
   const object = {
+    id,
     speaker,
     title,
     topic,
@@ -94,7 +112,7 @@ private addVideoToList() {
     body: JSON.stringify(object),
     headers: {'Content-Type': "application/json-patch+json",
     'cache-control': 'no-cache'},
-    method: 'POST'
+    method: 'PUT'
   })
       .then((response : any) => {
     if (!response.ok) {

@@ -9,10 +9,9 @@ interface IYoutubePlayerProps {
 export class YoutubePlayer extends React.Component<IYoutubePlayerProps>{
   public render() {
     const opts = {
-      height: '390',
       playerVars: { // https://developers.google.com/youtube/player_parameters
       },
-      width: '640'
+      width: '100%'
 
     };
  
