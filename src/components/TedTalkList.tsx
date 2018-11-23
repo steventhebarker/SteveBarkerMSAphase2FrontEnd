@@ -1,5 +1,5 @@
-import deleteIcon from "C:/Users/steve/Desktop/phase2website/SteveBarkerMSAphase2FrontEnd/src/deleteIcon.png";
-import editIcon from "C:/Users/steve/Desktop/phase2website/SteveBarkerMSAphase2FrontEnd/src/editIcon.png";
+import deleteIcon from "./deleteIcon.png";
+import editIcon from "./editIcon.png";
 import * as React from 'react';
 
 interface ITedTalkListProps {
